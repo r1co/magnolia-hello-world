@@ -4,6 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn clean install'
+                archiveArtifacts artifacts: '*.war'
+
             }
         }
     }
